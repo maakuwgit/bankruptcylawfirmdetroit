@@ -1,0 +1,224 @@
+/**
+ *
+ * Grid styles
+ *
+ *
+ */
+.container {
+  @include container-fixed;
+  padding-left: $padding-xsmall;
+  padding-right: $padding-xsmall;
+
+  @include screen-xl {
+    padding-left: $padding-small;
+    padding-right: $padding-small;
+  }
+
+  @include screen-xl-up {
+    max-width: $screen-xl;
+    padding-left: $padding-medium;
+    padding-right: $padding-medium;
+  }
+
+  .row {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &.column {
+    flex-direction: column;
+  }
+}
+
+.row {
+  width: 100%;
+  @include flexible;
+  @include screen-md {
+    justify-content: flex-start;
+  }
+
+  &.stretch {
+    align-items: stretch;
+  }
+
+  &.nowrap{
+    flex-wrap: nowrap;
+    position: initial;
+  }
+
+  &.end {
+    justify-content: flex-end;
+  }
+
+  &.start {
+    justify-content: flex-start;
+  }
+
+  &.between {
+    justify-content: space-between;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.centered {
+    align-items: center;
+    align-content: center;
+  }
+
+  [class^="col"],
+  [class*="col-"] {
+    display: flex;
+    align-self: auto;
+
+    &:not[data-component] {
+      padding:0 $padding-xsmall;
+
+      @include screen-md-only {
+        padding:0 $padding-xsmall;
+      }
+
+      @include screen-lg-up {
+        padding:0 $padding-small;
+      }
+    }
+
+    &.flex-end {
+      align-self: flex-end;
+    }
+
+    &.flex-start {
+      align-self: flex-start;
+    }
+
+    &.center {
+      align-self: center;
+    }
+
+    &.stretch {
+      align-self: stretch;
+    }
+
+    &:not([class*="xxs-"])
+    :not([class*="xs-"])
+    :not([class*="sm-"])
+    :not([class*="md-"])
+    :not([class*="lg-"])
+    :not([class*="xl-"])
+    :not([data-component]) {
+      flex: 0 1 auto;
+    }
+
+    .row {
+
+      [class^="col"],
+      [class*="col-"] {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+    }
+
+  }
+}
+
+.col {
+  width: 100%;
+  max-width: 100%;
+  padding:0 #{$padding-xsmall/2};
+
+  &.end {
+    margin-left: 0;
+  }
+
+  @include screen-lg-up {
+    padding:0 $padding-xsmall;
+  }
+
+  @include screen-sm {
+
+    .col {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  $perc: (100 / ($grid-columns / $i) );
+  
+  .col-#{$i} {
+    flex: 0 ($perc * 0.01) auto;
+  }
+
+  .offset-#{$i} {
+    margin-left: calc( (12 - #{$i}) * 100%);
+  }
+
+  @include screen-xs-only {
+    .col-xs-#{$i} {
+      width: $perc * 1%;
+      max-width: $perc * 1%;
+      flex: 0 ($perc * 0.01) auto;
+    }
+
+    .offset-xs-#{$i} {
+      margin-left: calc( (12 - #{$i}) * 100%);
+    }
+
+  }
+
+  @include screen-sm-only {
+    .col-sm-#{$i} {
+      width: $perc * 1%;
+      max-width: $perc * 1%;
+      flex: 0 ($perc * 0.01) auto;
+    }
+
+    .offset-sm-#{$i} {
+      margin-left: calc( (12 - #{$i}) * 100%);
+    }
+
+  }
+
+  @include screen-md-only {
+    .col-md-#{$i} {
+      width: $perc * 1%;
+      max-width: $perc * 1%;
+      flex: 0 ($perc * 0.01) auto;
+    }
+
+    .offset-md-#{$i} {
+      margin-left: calc( (12 - #{$i}) * 100%);
+    }
+
+  }
+
+  @include screen-lg-only {
+    .col-lg-#{$i}{
+      width: $perc * 1%;
+      max-width: $perc * 1%;
+      flex: 0 ($perc * 0.01) auto;
+    }
+
+    .offset-lg-#{$i} {
+      margin-left: calc( (12 - #{$i}) * 100%);
+    }
+
+  }
+
+  @include screen-xl-up {
+    .col-xl-#{$i} {
+      width: $perc * 1%;
+      max-width: $perc * 1%;
+      flex: 0 ($perc * 0.01) auto;
+    }
+
+    .offset-xl-#{$i} {
+      margin-left: calc( (12 - #{$i}) * 100%);
+    }
+
+  }
+}

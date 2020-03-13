@@ -1,0 +1,1135 @@
+/*
+ * Animation Extensions (so we can have them play, even when there is no "enter"
+ * triggered when they are the first element)
+ */
+%animateLRBlocks {
+  .lr-blocks__content {
+    * {
+      opacity: 1;
+    }
+
+    .h1, .h2, .h3 {
+      transform: translateX(0);
+    }
+  }
+
+  figure {
+    transform: scale(1);
+    opacity: 1;
+    transition-delay: 300ms;
+  }
+}
+
+%animateInfoBlocks {
+  .info-block__blocks,
+  .info-block__supertitle,
+  .info-block__heading,
+  .info-block__content,
+  .info-block__block__icon,
+  .info-block__block__title,
+  .info-block__block__caption,
+  .info-block__block__figure {
+    opacity: 1;
+  }
+
+  .info-block__supertitle {
+    transform: translateY(0);
+  }
+
+  .info-block__heading {
+    transform: translateX(0);
+    transition-delay: 250ms;
+  }
+
+  .info-block__content {
+    transition-delay: 350ms;
+  }
+
+  .info-block__blocks {
+    transition-delay: 300ms;
+  }
+
+  .info-block__block__icon {
+    transform: scale(1);
+    transition-delay: 750ms;
+  }
+
+  .info-block__block__title {
+    transform: translateX(0);
+    transition-delay: 850ms;
+  }
+
+  .info-block__block__caption {
+    transition-delay: 950ms;
+  }
+
+  .info-block__block__figure {
+    transform: scale(1);
+    transition-delay: 1s;
+  }
+}
+
+%animateInfographic {
+  .info__supertitle,
+  .info__heading,
+  .info__content,
+  .info__infographic__blurbs,
+  .info__infographic__blurb:before,
+  .info__infographic__blurb:after,
+  .info__infographic__blurb p,
+  .info__infographic__figure {
+    opacity: 1;
+  }
+
+  .info__supertitle {
+    transform: translateY(0);
+  }
+
+  .info__heading {
+    transform: translateX(0);
+    transition-delay: 250ms;
+  }
+
+  .info__content {
+    transition-delay: 350ms;
+  }
+
+  .info__infographic__blurbs {
+    transition-delay: 450ms;
+
+    &:nth-of-type(2){
+      transition-delay: 500ms;
+
+      .info__infographic__blurb {
+
+        &:before,
+        &:after {
+          transition-delay: 700ms;
+        }
+
+        p {
+          transition-delay: 650ms;
+        }
+      }
+
+    }
+
+    .info__infographic__blurb {
+
+      &:before,
+      &:after {
+        transition-delay: 650ms;
+        clip: rect(0, 500px, 500px, 0);
+      }
+
+      p {
+        transition-delay: 600ms;
+      }
+
+    }
+
+  }
+
+  .info__infographic__blurbs,
+  .info__infographic__figure {
+    transform: scale(1);
+  }
+
+  .info__infographic__figure {
+    transition-delay: 800ms;
+  }
+}
+
+%animateImageWCaption {
+  figure {
+    transform: scale(1);
+    transition-delay: 300ms;
+  }
+
+  figure,
+  .image-w-caption__caption {
+    opacity: 1;
+  }
+}
+
+%animateBlogGrid {
+
+  .blog-grid__blog,
+  .blog-grid__supertitle,
+  .blog-grid__heading,
+  .blog-grid__content {
+    opacity: 1;
+  }
+
+  .blog-grid__blog {
+    transform: scale(1);
+  }
+
+  .blog-grid__supertitle {
+    transform: translateY(0);
+  }
+
+  .blog-grid__heading {
+    transform: translateX(0);
+    transition-delay: 250ms;
+  }
+
+  .blog-grid__content {
+    transition-delay: 350ms;
+  }
+
+  .blog-grid__blog_wrapper {
+
+    &:nth-of-type(2) {
+
+      .blog-grid__blog {
+        transition-delay: 50ms;
+      }
+
+    }
+
+    &:nth-of-type(3) {
+
+      .blog-grid__blog {
+        transition-delay: 100ms;
+      }
+
+    }
+
+    &:nth-of-type(4) {
+
+      .blog-grid__blog {
+        transition-delay: 150ms;
+      }
+
+    }
+
+    &:nth-of-type(5) {
+
+      .blog-grid__blog {
+        transition-delay: 175ms;
+      }
+
+    }
+
+    &:nth-of-type(6) {
+
+      .blog-grid__blog {
+        transition-delay: 200ms;
+      }
+
+    }
+
+    &:nth-of-type(n+6) {
+
+      .blog-grid__blog {
+        transition-delay: 210ms;
+      }
+
+    }
+
+  }
+
+  .card-grid__cards_wrapper:nth-child(n+1) {
+
+    .card-grid__card {
+
+      &:nth-of-type(2) {
+        transition-delay: 450ms;
+      }
+
+      &:nth-of-type(3) {
+        transition-delay: 550ms;
+      }
+
+      &:nth-of-type(4) {
+        transition-delay: 650ms;
+      }
+
+      &:nth-of-type(5) {
+        transition-delay: 700ms;
+      }
+
+      &:nth-of-type(6) {
+        transition-delay: 750ms;
+      }
+
+      &:nth-of-type(n+6) {
+        transition-delay: 775ms;
+      }
+
+    }
+
+  }
+}
+
+%animateCardGrid {
+
+  .card-grid__card,
+  .card-grid__supertitle,
+  .card-grid__heading,
+  .card-grid__content {
+    opacity: 1;
+  }
+
+  .card-grid__card {
+    transform: scale(1);
+  }
+
+  .card-grid__supertitle {
+    transform: translateY(0);
+  }
+
+  .card-grid__heading {
+    transform: translateX(0);
+    transition-delay: 250ms;
+  }
+
+  .card-grid__content {
+    transition-delay: 350ms;
+  }
+
+  .card-grid__cards_wrapper:first-child {
+
+    .card-grid__card {
+
+      &:nth-of-type(2) {
+        transition-delay: 50ms;
+      }
+
+      &:nth-of-type(3) {
+        transition-delay: 100ms;
+      }
+
+      &:nth-of-type(4) {
+        transition-delay: 150ms;
+      }
+
+      &:nth-of-type(5) {
+        transition-delay: 175ms;
+      }
+
+      &:nth-of-type(6) {
+        transition-delay: 200ms;
+      }
+
+      &:nth-of-type(n+6) {
+        transition-delay: 210ms;
+      }
+
+    }
+
+  }
+
+  .card-grid__cards_wrapper:nth-child(n+1) {
+
+    .card-grid__card {
+
+      &:nth-of-type(2) {
+        transition-delay: 450ms;
+      }
+
+      &:nth-of-type(3) {
+        transition-delay: 550ms;
+      }
+
+      &:nth-of-type(4) {
+        transition-delay: 650ms;
+      }
+
+      &:nth-of-type(5) {
+        transition-delay: 700ms;
+      }
+
+      &:nth-of-type(6) {
+        transition-delay: 750ms;
+      }
+
+      &:nth-of-type(n+6) {
+        transition-delay: 775ms;
+      }
+
+    }
+
+  }
+}
+
+%animatePostGrid {
+  .post-grid__post_wrapper,
+  .post-grid__supertitle,
+  .post-grid__title,
+  .post-grid__content {
+    opacity: 1;
+  }
+
+  .post-grid__supertitle {
+    transform: translateY(0);
+  }
+
+  .post-grid__title {
+    transform: translateX(0);
+    transition-delay: 250ms;
+  }
+
+  .post-grid__content {
+    transition-delay: 350ms;
+  }
+
+  .post-grid__post_wrapper {
+    transform: scale(1);
+    transition-delay: 350ms;
+
+    &:nth-of-type(2) {
+      transition-delay: 400ms;
+    }
+
+    &:nth-of-type(3) {
+      transition-delay: 450ms;
+    }
+
+    &:nth-of-type(4) {
+      transition-delay: 475ms;
+    }
+
+    &:nth-of-type(5) {
+      transition-delay: 500ms;
+    }
+
+    &:nth-of-type(n+5) {
+      transition-delay: 510ms;
+    }
+
+  }
+}
+
+%animateThreeColBlocks {
+  transform: scale(1);
+  opacity: 1;
+  transition-delay: 300ms;
+
+  .three-col-block__block__icon {
+    transform: scale(1);
+    opacity: 1;
+    transition-delay: 750ms;
+  }
+
+  .three-col-block__block__title {
+    transform: translateX(0);
+    transition-delay: 850ms;
+    opacity: 1;
+  }
+
+  .three-col-block__block__caption {
+    opacity: 1;
+    transition-delay: 950ms;
+  }
+}
+
+%animateVertTimeline {
+
+  .vert-timeline__supertitle,
+  .vert-timeline__heading,
+  .vert-timeline__content {
+    opacity: 1;
+  }
+
+  .vert-timeline__block__icon {
+    transform: scale(1);
+  }
+
+  .vert-timeline__supertitle {
+    transform: translateY(0);
+  }
+
+  .vert-timeline__heading {
+    transform: translateX(0);
+    transition-delay: 250ms;
+  }
+
+  .vert-timeline__content {
+    transition-delay: 350ms;
+  }
+
+  .vert-timeline__block {
+
+    .vert-timeline__block__icon,
+    .vert-timeline__block__caption,
+    .vert-timeline__block__title {
+      opacity: 1;
+    }
+
+    .vert-timeline__block__icon {
+      transition-delay: 300ms;
+    }
+
+    .vert-timeline__block__title {
+      transition-delay: 350ms;
+    }
+
+    .vert-timeline__block__caption {
+      transition-delay: 450ms;
+    }
+
+    &:nth-of-type(2) {
+
+      .vert-timeline__block__icon {
+        transition-delay: 350ms;
+      }
+
+      .vert-timeline__block__title {
+        transition-delay: 400ms;
+      }
+
+      .vert-timeline__block__caption {
+        transition-delay: 450ms;
+      }
+
+    }
+
+    &:nth-of-type(3) {
+
+      .vert-timeline__block__icon {
+        transition-delay: 450ms;
+      }
+
+      .vert-timeline__block__title {
+        transition-delay: 500ms;
+      }
+
+      .vert-timeline__block__caption {
+        transition-delay: 550ms;
+      }
+
+    }
+
+    &:nth-of-type(4) {
+
+      .vert-timeline__block__icon {
+        transition-delay: 550ms;
+      }
+
+      .vert-timeline__block__title {
+        transition-delay: 600ms;
+      }
+
+      .vert-timeline__block__caption {
+        transition-delay: 650ms;
+      }
+
+    }
+
+    &:nth-of-type(5) {
+
+      .vert-timeline__block__icon {
+        transition-delay: 650ms;
+      }
+
+      .vert-timeline__block__title {
+        transition-delay: 700ms;
+      }
+
+      .vert-timeline__block__caption {
+        transition-delay: 750ms;
+      }
+
+    }
+
+    &:nth-of-type(n+5) {
+
+      .vert-timeline__block__icon {
+        transition-delay: 725ms;
+      }
+
+      .vert-timeline__block__title {
+        transition-delay: 750ms;
+      }
+
+      .vert-timeline__block__caption {
+        transition-delay: 775ms;
+      }
+
+    }
+  }
+}
+
+/*
+* Global or General Animations
+*/
+.hdg, .hdg__title,
+.hdg__supertitle, .hdg__content,
+.image-w-caption__caption,
+.info__supertitle,
+.info__heading,
+.info__content,
+.info__infographic__blurbs,
+.info__infographic__blurb:before,
+.info__infographic__blurb:after,
+.info__infographic__blurb p,
+.info__infographic__figure,
+.info-block__supertitle,
+.info-block__heading,
+.info-block__content,
+.info-block__blocks,
+.info-block__block__icon,
+.info-block__block__title,
+.info-block__block__caption,
+.info-block__block__figure,
+.post-grid__supertitle,
+.post-grid__title,
+.post-grid__content,
+.post-grid__post_wrapper,
+.three-col-block__blocks,
+.three-col-block__block__icon,
+.three-col-block__block__title,
+.three-col-block__block__caption,
+.vert-timeline__block__icon,
+.vert-timeline__block__title,
+.vert-timeline__block__caption,
+.vert-timeline__supertitle,
+.vert-timeline__heading,
+.vert-timeline__content,
+.ll-synopsis, .synopsis__header, .synopsis__description,
+.prefooter__title, .prefooter__content {
+  transition: all 300ms ease-out;
+}
+
+//Animate every attribute at 'normal' speed
+a,
+[data-backgrounder],
+.vertical-timeline *,
+.hero .button,
+.blog-grid__blog,
+.card-grid__card {
+  transition: all 200ms ease-in-out;
+  &:hover {
+    transition: all 200ms ease-in-out;
+  }
+}
+
+//Animate every attribute at 'fast' speed w/hover at 'hyper' speed
+.btn,
+button,
+.button svg,
+input[type="submit"],
+.ll-blog-grid li img,
+.ll-card-grid li img {
+  transition: all 150ms ease-out;
+  &:hover {
+    transition: all 50ms ease-out;
+  }
+}
+
+/*
+ * Generic Navbar Animations
+ */
+body.home > header.navbar {
+  transform: translateY(-100px);
+}
+
+body > header,
+body > header.top,
+body > header.transparent {
+  transition: background 300ms ease-in-out,
+              color 200ms ease-out;
+}
+
+.hdg {
+  transition: transform 200ms ease-out 1.125s,
+              background 300ms ease-in-out,
+              color 200ms ease-out;
+}
+
+/*
+ * OnLoad Animations
+ */
+body.loaded {
+  //Header
+  > header.navbar {
+    transform: translateY(0);
+    transition-delay: 1s, 0s, 0s;
+  }
+
+  &.animated {
+    > header.navbar {
+      transition-delay: 0s;
+    }
+  }
+
+  //Headings
+  .hdg {
+
+    .hdg__title,
+    .hdg__supertitle,
+    .hdg__content {
+      opacity: 1;
+    }
+
+    .hdg__title {
+      transition-delay: 150ms;
+      transform: translateX(0);
+    }
+
+    .hdg__supertitle {
+      transition-delay: 250ms;
+      transform: translateY(0);
+    }
+
+    .hdg__content {
+      transition-delay: 300ms;
+    }
+
+  }
+
+  //The Synopsis Component should ALWAYS animate in, since it's in the viewport on load
+  .ll-synopsis {
+    transform: scale(1);
+    opacity: 1;
+    transition-delay: 350ms;
+
+    .synopsis__header,
+    .synopsis__description {
+      opacity: 1;
+    }
+
+    .synopsis__header {
+      transform: translateY(0);
+      transition-delay: 750ms;
+    }
+
+    .synopsis__description {
+      transition-delay: 900ms;
+
+      &:last-of-type {
+        transition-delay: 1.1s;
+      }
+    }
+  }
+
+  //Since ANY Flexible elements can be at the top, if it IS, let's animate it here
+  .ll-image-w-caption:first-of-type {
+
+    &:first-child,
+    &:nth-child(2) {
+      @extend %animateImageWCaption;
+    }
+
+  }
+
+  //All the Flexible Components, if they're the first block
+  .three-col-block__blocks:first-of-type {
+
+    &:first-child,
+    &:nth-child(2) {
+      @extend %animateThreeColBlocks;
+    }
+
+  }
+
+  .ll-blog-grid:first-of-type {
+
+    &:first-child,
+    &:nth-child(2) {
+      @extend %animateBlogGrid;
+    }
+
+  }
+
+  .ll-card-grid:first-of-type {
+
+    &:first-child,
+    &:nth-child(2) {
+      @extend %animateCardGrid;
+    }
+
+  }
+
+  .ll-info-blocks:first-of-type {
+    @extend %animateInfoBlocks;
+  }
+
+  .ll-infographic:first-of-type {
+    @extend %animateInfographic;
+  }
+}
+
+/*
+* ScrollMagic Animations
+*/
+[data-component].enter {
+
+  //Buttons
+  a.btn {
+    span,
+    svg {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  //Prefooter
+  &.ll-prefooter {
+
+    .prefooter__title {
+      transform: translateY(0);
+    }
+
+    .prefooter__title,
+    .prefooter__content {
+      opacity: 1;
+    }
+
+    .prefooter__content {
+      transition-delay: 300ms;
+    }
+  }
+
+  //Image W Caption
+  &.ll-image-w-caption {
+    @extend %animateImageWCaption;
+  }
+
+  //Left/Right Blocks
+  &.ll-lr-blocks {
+    @extend %animateLRBlocks;
+  }
+
+  //Info Blocks
+  &.ll-info-blocks {
+    @extend %animateInfoBlocks;
+  }
+
+  //Infographic
+  &.ll-infographic {
+    @extend %animateInfographic;
+  }
+
+  //Blog Grid
+  &.ll-blog-grid {
+    @extend %animateBlogGrid;
+  }
+
+  //Card Grid
+  &.ll-card-grid {
+    @extend %animateCardGrid;
+  }
+
+  //Post Grid
+  &.ll-post-grid {
+    @extend %animatePostGrid;
+  }
+
+  //Vertical Timeline
+  &.ll-vertical-timeline {
+    @extend %animateVertTimeline;
+  }
+
+  //Card Grid
+  &.ll-card-grid {
+    figure {
+      transform: translateX(0);
+      opacity: 1;
+      transition-delay: 300ms;
+      &:nth-of-type(2) {
+        transition-delay: 400ms;
+      }
+      &:nth-of-type(3) {
+        transition-delay: 500ms;
+      }
+      &:nth-of-type(4) {
+        transition-delay: 600ms;
+      }
+      &:nth-of-type(5) {
+        transition-delay: 700ms;
+      }
+      &:nth-of-type(n+5) {
+        transition-delay: 750ms;
+      }
+    }
+  }
+
+  //3 Column Blocks
+  &.three-col-block__blocks {
+    @extend %animateThreeColBlocks;
+  }
+}
+
+
+/*
+ * Pre-animations
+*/
+
+/* General */
+
+//Buttons
+a.btn {
+  svg {
+    transform: scale(0.8);
+  }
+  span,
+  svg {
+    opacity: 0;
+  }
+}
+
+//Headings
+.hdg {
+
+  .hdg__title,
+  .hdg__supertitle,
+  .hdg__content {
+    opacity: 0;
+  }
+
+  .hdg__title {
+    transform: translateX(5vw);
+  }
+
+  .hdg__supertitle {
+    transform: translateY(-5vh);
+  }
+}
+
+/* Components */
+
+//Synopsis
+.ll-synopsis {
+  transform: scale(0.8);
+  opacity: 0;
+
+  .synopsis__header,
+  .synopsis__description {
+    opacity: 0;
+  }
+
+  .synopsis__header {
+    transform: translateY(-2.5vh);
+  }
+}
+
+//Prefooter
+.ll-prefooter {
+
+  .prefooter__title {
+    transform: translateY(-2.5vh);
+  }
+
+  .prefooter__title,
+  .prefooter__content {
+    opacity: 0;
+  }
+}
+
+//Vertical Timeline
+.ll-vertical-timeline {
+
+  .vert-timeline__supertitle,
+  .vert-timeline__heading,
+  .vert-timeline__content,
+  .vert-timeline__block__icon,
+  .vert-timeline__block__title,
+  .vert-timeline__block__caption {
+    opacity: 0;
+  }
+
+  .vert-timeline__block__icon {
+    transform: scale(0.6);
+  }
+
+  .vert-timeline__supertitle {
+    transform: translateY(-5vh);
+  }
+
+  .vert-timeline__heading {
+    transform: translateX(5vw);
+  }
+}
+
+//Blog Grid
+.ll-blog-grid {
+
+  .blog-grid__blog,
+  .blog-grid__supertitle,
+  .blog-grid__heading,
+  .blog-grid__content {
+    opacity: 0;
+  }
+
+  .blog-grid__blog {
+    transform: scale(0.6);
+  }
+
+  .blog-grid__supertitle {
+    transform: translateY(-5vh);
+  }
+
+  .blog-grid__heading {
+    transform: translateX(5vw);
+  }
+}
+
+//Card Grid
+.ll-card-grid {
+
+  .card-grid__card,
+  .card-grid__supertitle,
+  .card-grid__heading,
+  .card-grid__content {
+    opacity: 0;
+  }
+
+  .card-grid__card {
+    transform: scale(0.6);
+  }
+
+  .card-grid__supertitle {
+    transform: translateY(-5vh);
+  }
+
+  .card-grid__heading {
+    transform: translateX(5vw);
+  }
+}
+
+//Post Grid
+.ll-post-grid {
+
+  .post-grid__post_wrapper,
+  .post-grid__supertitle,
+  .post-grid__title,
+  .post-grid__content {
+    opacity: 0;
+  }
+
+  .post-grid__post_wrapper {
+    transform: scale(0.6);
+  }
+
+  .post-grid__supertitle {
+    transform: translateY(-5vh);
+  }
+
+  .post-grid__title {
+    transform: translateX(5vw);
+  }
+}
+
+//Image W Caption
+.ll-image-w-caption {
+  figure {
+    transform: scale(0.6);
+  }
+
+  figure,
+  .image-w-caption__caption {
+    opacity: 0;
+  }
+}
+
+//Left/Right Blocks
+.ll-lr-blocks {
+  .lr-blocks__content {
+    * {
+      opacity: 0;
+    }
+
+    .h1 {
+      transform: translateX(-5vh);
+    }
+
+    .h2, .h3 {
+      transform: translateX(5vh);
+    }
+  }
+
+  figure {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+}
+
+//Info Blocks
+.ll-info-blocks {
+  .info-block__blocks,
+  .info-block__supertitle,
+  .info-block__heading,
+  .info-block__content,
+  .info-block__block__icon,
+  .info-block__block__title,
+  .info-block__block__caption,
+  .info-block__block__figure {
+    opacity: 0;
+  }
+
+  .info-block__supertitle {
+    transform: translateY(-5vh);
+  }
+
+  .info-block__heading {
+    transform: translateX(5vw);
+  }
+
+  .info-block__block__figure {
+    transform: scale(0.6);
+  }
+
+  .info-block__block__icon {
+    transform: scale(0.8);
+  }
+
+  .info-block__block__title {
+    transform: translateX(5vh);
+  }
+}
+
+//Infographic
+.ll-infographic {
+  .info__supertitle,
+  .info__heading,
+  .info__content,
+  .info__infographic__blurbs,
+  .info__infographic__blurb:before,
+  .info__infographic__blurb:after,
+  .info__infographic__blurb p,
+  .info__infographic__figure {
+    opacity: 0;
+  }
+
+  .info__supertitle {
+    transform: translateY(-5vh);
+  }
+
+  .info__heading {
+    transform: translateX(5vw);
+  }
+
+  .info__infographic__blurbs,
+  .info__infographic__figure {
+    transform: scale(0.6);
+  }
+
+  .info__infographic__blurb:before,
+  .info__infographic__blurb:after {
+    clip: rect(0,0,0,0);
+  }
+}
+
+//3 Column Blocks
+.three-col-block__blocks {
+  transform: scale(0.6);
+  opacity: 0;
+
+  .three-col-block__block__icon {
+    transform: scale(0.8);
+  }
+
+  .three-col-block__block__title {
+    transform: translateX(5vh);
+  }
+
+  .three-col-block__block__icon,
+  .three-col-block__block__title,
+  .three-col-block__block__caption {
+    opacity: 0;
+  }
+
+}

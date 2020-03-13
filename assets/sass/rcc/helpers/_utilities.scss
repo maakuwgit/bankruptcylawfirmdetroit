@@ -1,0 +1,578 @@
+/**
+ * Utilites & classes
+ */
+
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 15px 20px 0;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 20px 15px;
+}
+
+.block {
+  &.button {
+    display: block;
+  }
+  display: block;
+}
+
+.iblock {
+  &.button {
+    display: inline-block;
+  }
+  display: inline-block;
+}
+
+.flex {
+  &.button {
+    display: flex;
+  }
+  display: flex;
+}
+
+.iflex {
+  &.button {
+    display: inline-flex;
+  }
+  display: inline-flex;
+}
+
+.hide {
+  display: none !important;
+}
+
+//Used on most sections to space them out
+%section-padding {
+  padding-top: $padding-small;
+  padding-bottom: $padding-small;
+
+  @include screen-md-only {
+    padding-top: $padding-medium;
+    padding-bottom: $padding-medium;
+  }
+
+  @include screen-lg-up {
+    padding-top: $padding-large;
+    padding-bottom: $padding-large;
+  }
+}
+
+%icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: rem-calc(16);
+  font-weight: $text-book;
+  line-height: line-calc(24,16);
+
+  svg {
+    width: rem-calc(51);
+    height: rem-calc(51);
+    fill: white;
+    margin-left: rem-calc(38);
+  }
+}
+
+.icon-link {
+  @extend %icon-link;
+}
+
+.shadowed {
+  @extend %btn--shadow;
+}
+
+.large,
+.text-large {
+  @extend %large;
+}
+
+.text-small {
+  @extend %small;
+}
+
+/* Font Weights */
+.text-black,
+.h1.text-black,
+.h2.text-black,
+.h3.text-black,
+.h4.text-black,
+.h5.text-black,
+.h6.text-black {
+    font-weight: $text-black;
+}
+
+.text-med,
+.h1.text-med,
+.h2.text-med,
+.h3.text-med,
+.h4.text-med,
+.h5.text-med,
+.h6.text-med {
+  font-weight: $text-med;
+}
+
+.text-bold,
+.h1.text-bold,
+.h2.text-bold,
+.h3.text-bold,
+.h4.text-bold,
+.h5.text-bold,
+.h6.text-bold {
+  font-weight: $text-bold;
+}
+
+.text-book,
+.h1.text-book,
+.h2.text-book,
+.h3.text-book,
+.h4.text-book,
+.h5.text-book,
+.h6.text-book {
+  font-weight: $text-book;
+}
+
+/* List Styles */
+.no-bullet {
+  list-style: none;
+  padding-left: initial;
+}
+
+.two-column {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    width: 50%;
+  }
+
+}
+
+.bullet {
+  list-style: disc;
+}
+
+/* Grid Styles */
+.relative {
+  position: relative;
+}
+
+.row--full {
+  margin: 0;
+}
+
+.col--full {
+  padding: 0;
+}
+
+%col {
+  position: relative;
+  min-height: 1px;
+  float: left;
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Vertical align
+%vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Clearfix
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+      content: " ";
+      display: table;
+  }
+  &:after {
+      clear: both;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// Visually hide an element
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+// Overlay
+// Use in a pseudo element
+%overlay {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+// Cover
+// Makes videos or images work like background-size: cover;
+// as long as the parent is relative and has overflow: hidden
+%cover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+/**
+ * Alignment styles
+ * ----------------------------------------------------------------------------
+ *
+ * Utility classes for adjusting content alignment
+ */
+
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+.vertical-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.vertical-center > * {
+  flex: 0 0 auto;
+}
+
+/**
+ * Text styles
+ * ----------------------------------------------------------------------------
+ *
+ * Utility classes for affecting text display
+ */
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-default {
+  text-transform: initial;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+.text-muted {
+  color: $grey;
+}
+
+//theme specific colors
+a, address, dt, dd, h1, h2, h3, h4, h5, h6, li, p, span, small, td, th, time, ul,
+.thumbnail h3, .thumbnail h4, .thumbnail h5 {
+  &.black {
+    color: $black;
+  }
+  &.coal {
+    color: $coal;
+  }
+  &.battleship {
+    color: $battleship;
+  }
+  &.ebony {
+    color: $ebony;
+  }
+  &.smoke {
+    color: $smoke;
+  }
+  &.grey {
+    color: $grey;
+  }
+  &.gold {
+    color: $gold;
+  }
+  &.goldenrod {
+    color: $goldenrod;
+  }
+  &.teal {
+    color: $teal;
+  }
+  &.aluminum {
+    color: $aluminum;
+  }
+  &.silver {
+    color: $silver;
+  }
+  &.seafoam {
+    color: $seafoam;
+  }
+  &.ivory {
+    color: $ivory;
+  }
+  &.white {
+    color: $white;
+  }
+  &.tan {
+    color: $tan;
+  }
+  &.caramel {
+    color: $caramel;
+  }
+  &.yellow {
+    color: $yellow;
+  }
+  &.taupe {
+    color: $taupe;
+  }
+  &.chocolate {
+    color: $chocolate;
+  }
+  &.chocolate-drk {
+    color: $chocolate-drk;
+  }
+  &.magenta {
+    color: $magenta;
+  }
+  &.purple {
+    color: $purple;
+  }
+  &.plum {
+    color: $plum;
+  }
+  &.powder {
+    color: $powder;
+  }
+  &.melon {
+    color: $melon;
+  }
+  &.midnight {
+    color: $midnight;
+  }
+}
+
+aside, article, main, div, header, footer, section, nav, main, menu, code, hr {
+  &.black {
+    background-color: $black;
+  }
+  &.coal {
+    background-color: $coal;
+  }
+  &.battleship {
+    background-color: $battleship;
+  }
+  &.ebony {
+    background-color: $ebony;
+  }
+  &.smoke {
+    background-color: $smoke;
+  }
+  &.grey {
+    background-color: $grey;
+  }
+  &.gold {
+    background-color: $gold;
+  }
+  &.goldenrod {
+    background-color: $goldenrod;
+  }
+  &.teal {
+    background-color: $teal;
+  }
+  &.aluminum {
+    background-color: $aluminum;
+  }
+  &.silver {
+    background-color: $silver;
+  }
+  &.seafoam {
+    background-color: $seafoam;
+  }
+  &.ivory {
+    background-color: $ivory;
+  }
+  &.white {
+    background-color: $white;
+  }
+  &.tan {
+    background-color: $tan;
+  }
+  &.caramel {
+    background-color: $caramel;
+  }
+  &.yellow {
+    background-color: $yellow;
+  }
+  &.taupe {
+    background-color: $taupe;
+  }
+  &.chocolate {
+    background-color: $chocolate;
+  }
+  &.chocolate-drk {
+    background-color: $chocolate-drk;
+  }
+  &.magenta {
+    background-color: $magenta;
+  }
+  &.purple {
+    background-color: $purple;
+  }
+  &.plum {
+    background-color: $plum;
+  }
+  &.powder {
+    background-color: $powder;
+  }
+  &.melon {
+    background-color: $melon;
+  }
+  &.midnight {
+    background-color: $midnight;
+  }
+}
+
+path, polygon, rect, circle {
+  &.black {
+    fill: $black;
+  }
+  &.coal {
+    fill: $coal;
+  }
+  &.battleship {
+    fill: $battleship;
+  }
+  &.ebony {
+    fill: $ebony;
+  }
+  &.smoke {
+    fill: $smoke;
+  }
+  &.grey {
+    fill: $grey;
+  }
+  &.gold {
+    fill: $gold;
+  }
+  &.goldenrod {
+    fill: $goldenrod;
+  }
+  &.teal {
+    fill: $teal;
+  }
+  &.aluminum {
+    fill: $aluminum;
+  }
+  &.silver {
+    fill: $silver;
+  }
+  &.seafoam {
+    fill: $seafoam;
+  }
+  &.ivory {
+    fill: $ivory;
+  }
+  &.white {
+    fill: $white;
+  }
+  &.tan {
+    fill: $tan;
+  }
+  &.caramel {
+    fill: $caramel;
+  }
+  &.yellow {
+    fill: $yellow;
+  }
+  &.taupe {
+    fill: $taupe;
+  }
+  &.chocolate {
+    fill: $chocolate;
+  }
+  &.chocolate-drk {
+    fill: $chocolate-drk;
+  }
+  &.magenta {
+    fill: $magenta;
+  }
+  &.purple {
+    fill: $purple;
+  }
+  &.plum {
+    fill: $plum;
+  }
+  &.powder {
+    fill: $powder;
+  }
+  &.melon {
+    fill: $melon;
+  }
+  &.midnight {
+    fill: $midnight;
+  }
+}
+
+[data-clickthrough] {
+  cursor: pointer;
+}
+
+[data-backgrounder] {
+  background-position: center;
+  background-size: cover;
+
+  .feature {
+    max-height: 66.66667vh;
+    overflow: hidden;
+
+    img {
+      opacity: 0;
+      height: 0;
+      display: inline;
+      width: 0;
+    }
+
+  }
+
+}
+
+[data-slider] {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+}

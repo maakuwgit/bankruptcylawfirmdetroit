@@ -1,0 +1,33 @@
+.g-recaptcha {
+	margin-bottom:1rem;
+}
+
+.has-float-label input:placeholder-shown:not(:focus)+*, 
+.has-float-label select:placeholder-shown:not(:focus)+*, 
+.has-float-label textarea:placeholder-shown:not(:focus)+* {
+	font-size:100%;
+	top:.8em;
+}
+
+#contact {
+	input, 
+	textarea {
+		background-color: rgba($white, 0.9);
+	}
+	
+	label{
+		font-weight: $text-bold;
+	}
+}
+.recaptcha {
+	&.feedback{
+		display: none;
+	}
+	
+	&.invalid{
+		display:block;
+		margin-top: .25rem;
+		font-size: .875rem;
+		color: #dc3545;
+	}
+}

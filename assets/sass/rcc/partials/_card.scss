@@ -1,0 +1,147 @@
+/**
+ * Card
+ *
+ * Used width grid components ie: Blog Grid, Procedure Grid
+ * A (mostly) square box with a light shadow and gradient headline
+ */
+%card {
+  position: relative;
+  min-height: rem-calc(467);//Since we want these to scale on XL+ screens, these need to be rems
+  max-width: rem-calc(355);//Since we want these to scale on XL+ screens, these need to be rems
+  margin: #{$padding-xsmall} auto;
+  overflow: hidden;
+  background-color: $white;
+
+  &:hover, &:focus {
+    transform: scale(1.075);
+    box-shadow: 0 0 #{rem-calc(8)} 0 rgba($black, 0.26);
+
+    [class*='__nav'] {
+      color: $white;
+      background-color: $black;
+    }
+  }
+
+  @include screen-md-up {
+    margin-top: $padding-small;
+    margin-bottom: $padding-small;
+  }
+}
+
+.card-grid {
+  @extend %card;
+}
+
+%cards {
+  width: calc(100% + #{$grid-gutter-width});
+  margin-left: -1 * $grid-gutter-width/2;;
+}
+
+.card-grid__posts {
+  @extend %cards;
+}
+
+%card__figure {
+  min-height: rem-calc(209);//Since we want these to scale on XL+ screens, these need to be rems
+  height: calc( 33.3334vw/2 - #{$padding-small} );
+  margin-bottom: rem-calc(30);
+}
+
+.card-grid__feature__wrapper {
+  @extend %card__figure;
+}
+
+%card__body {
+  min-height: rem-calc(114);//Since we want these to scale on XL+ screens, these need to be rems
+  padding-right: $padding-small;
+  padding-left: $padding-small;
+
+  @include screen-md-up {
+    padding-right: rem-calc(40);
+    padding-left: rem-calc(40);
+  }
+}
+
+.card-grid__body {
+  @extend %card__body;
+}
+
+%card__title {
+  @extend %h6;
+  color: $smoke;
+  margin-top: rem-calc(20);
+  margin-bottom: rem-calc(20);
+
+  a {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+}
+
+.card-grid__title {
+  @extend %card__title;
+}
+
+%card__meta {
+  @extend %p;
+  display: block;
+  padding-right: $padding-small;
+  padding-left: $padding-small;
+  text-transform: uppercase;
+  color: $aluminum;
+
+  &:first-child {
+    margin-top: rem-calc(238);
+  }
+
+  @include screen-md-up {
+    padding-right: rem-calc(40);
+    padding-left: rem-calc(40);
+  }
+}
+
+.card-grid__meta {
+  @extend %card__meta;
+}
+
+%card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: rem-calc(45);
+  width: rem-calc(45);
+  margin-bottom: rem-calc(18);
+  border-radius: #{rem-calc(10)} 0 #{rem-calc(10)} 0;
+  background-color: $battleship;
+  background-image: linear-gradient(45deg, $battleship 0%, $gold 100%);
+}
+
+%card__cta {
+  @extend %btn;
+  padding: rem-calc(14);
+  color: $ebony;
+  background-color: $white;
+}
+
+.card-grid__cta {
+  @extend %card__cta;
+}
+
+%card__nav {
+  padding: #{rem-calc(38)} #{$padding-small} #{rem-calc(29)};
+  margin: #{rem-calc(20)} auto auto auto;
+
+  .btn {
+    width: rem-calc(236);
+  }
+
+  @include screen-md-up {
+    padding-right: rem-calc(40);
+    padding-left: rem-calc(40);
+  }
+}
+
+.card-grid__nav {
+  @extend %card__nav;
+}

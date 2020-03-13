@@ -1,0 +1,29 @@
+/**
+ * social list Styles
+ * ----------------------------------------------------------------------------
+ *
+ * List of linked social icons. Icons are created within the svg system
+ *
+ */
+
+.social-list {
+  display: block;
+  list-style: none;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.social-list__item {
+  display: flex;
+  margin: auto;
+  font-size: rem-calc(14);
+  line-height: line-calc(22,14);
+}
+
+.social-list__link {
+  color: $white;
+
+  &:hover {
+    color: $gold;
+  }
+}

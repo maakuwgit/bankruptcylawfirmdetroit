@@ -1,0 +1,167 @@
+/**
+ * Variables
+ *   1. Colors
+ *   2. Fonts
+ *   3. Units, Ratios & Widths
+ *   4. Screen
+ * _________________________________*/
+
+/**
+ * 1. Colors
+ * _________________________________*/
+
+ // Base colors (ordered by color from lightest to darkest)
+ //Yellows
+$tan: #ECE5D3;
+$caramel: #D4C08E;
+$yellow: #FFF786;
+$goldenrod: #FFD286;
+$gold: #C79637;
+$taupe: #4A4331;
+$chocolate: #4E3307;
+$chocolate-drk: #241702;
+//Purples
+$magenta: #9C55B6;
+$purple: #681786;
+$plum: #30023B;
+//Blues/Greens
+$seafoam: #BCDCD8;
+$powder: #CCECFF;
+$melon: #90DD8A;
+$teal: #00B9D0;
+$midnight: #020C21;
+//Greys
+$white: white;
+$ivory: #F4EFE1;
+$aluminum: #CFD7DA;
+$grey: #BABABA;
+$silver: #979797;
+$smoke: #403E3D;
+$ebony: #1f1f1f;
+$battleship: #2D2D2D;
+$coal: #202020;
+$black: black;
+//Legacy
+$blue-light: #ccecff;
+$blue-medium: #48a3d9;
+$blue-dark: #136796;
+$purple-light: #c676c8;
+$red: #d02c30;
+
+// Markup Oriented
+$text-color: $smoke;
+$selection: $yellow;
+$selection-bg: $teal;
+
+// Official social colors
+$facebook: #3461a1;
+$twitter: #28aae1;
+$google: #d44a2c;
+
+// Success
+$success-color: #00AC1E;
+
+// Danger
+$danger-color: #E4210D;
+$danger-background: transparent;
+$danger-border: #E4210D;
+
+/**
+ * 2. Fonts
+ * _________________________________*/
+
+// Font Families
+$font-family: 'Open Sans', sans-serif;
+$font-family-alt: 'Montserrat', sans-serif;
+$font-family-serif: 'Crete Round', serif;
+
+// Font Weights
+$text-book: 300;
+$text-med: 400;
+$text-bold: 600;
+$text-black: 900;
+
+/**
+ * 3. Units, Ratios & Widths
+ * _________________________________*/
+$rem-base: 16;
+$site-width: 1280px;
+$container-width: 1280px;
+$sidebar-width: rem-calc(80);
+$sidebar-width-lg: 13.5vw;
+
+// Aspect Ratios
+$ratio_3_2: 66.67%;
+$ratio_16_9: 56.25%;
+$ratio_4_3: 75%;
+$ratio_2_1: 50%;
+
+// Widths
+$width-1-1: 100%;
+$width-1-2: 50%;
+$width-1-3: 33.3333333%;
+$width-1-4: 25%;
+$width-1-5: 20%;
+$width-1-6: 16.6666667%;
+
+
+/**
+ * 4. Screen
+ * _________________________________*/
+
+// Media queries
+$screen-xxl:  1920px;
+$screen-xl:  1600px;
+$screen-lg:  1280px;
+$screen-md:  992px;
+$screen-sm:  768px;
+$screen-xs:  480px;
+$screen-xxs: 400px;
+
+// Media query variables
+$screen-xxl-maximum:  $screen-xxl - 1;
+$screen-xl-maximum:  $screen-xl - 1;
+$screen-lg-maximum:  $screen-lg - 1;
+$screen-md-maximum:  $screen-md - 1;
+$screen-sm-maximum:  $screen-sm - 1;
+$screen-xs-maximum:  $screen-xs - 1;
+$screen-xxs-maximum: $screen-xxs - 1;
+
+$screen-sm-min: $screen-sm !default;
+$screen-md-min: $screen-md !default;
+$screen-lg-min: $screen-lg !default;
+$screen-xl-min: $screen-xl !default;
+$screen-xxl-min: $screen-xxl !default;
+
+// The point at which the navbar becomes uncollapsed
+// Choose from any of the "Media query variables"
+$screen-nav-mobile: $screen-md-maximum;
+
+//Padding Options
+$padding-xsmall: rem-calc(5);
+$padding-small: rem-calc(15);
+$padding-medium: rem-calc(25);
+$padding-large: rem-calc(50);
+$padding-xlarge: $padding-small + $padding-large;
+
+//Thumbnails
+$thumbnail-height: rem-calc(412);
+
+// The point at which the navbar becomes uncollapsed (do not modify)
+$grid-float-breakpoint: $screen-nav-mobile + 1;
+
+// Grid
+$grid-columns: 12;
+$grid-gutter-width: $padding-small;
+$grid-column-padding: $padding-xsmall;
+
+// Container widths
+$container-sm:    (rem-calc($screen-sm) - $grid-gutter-width);
+$container-md:    (rem-calc($screen-md) - $grid-gutter-width);
+$container-lg:    (rem-calc($screen-lg) - $grid-gutter-width);
+
+// Links
+$link-color: $teal;
+$link-decoration: none;
+$link-hover-color: $seafoam;
+$link-hover-decoration: none;

@@ -1,0 +1,30 @@
+{
+  "@context": "http://www.schema.org",
+  "@type": "LocalBusiness",
+  "name": "Kostopoulos and Associates",
+  "url": "http://www.bankruptcylawfirmdetroit.com/",
+  "logo": "http://www.bankruptcylawfirmdetroit.com/images/logo.png",
+  "image": "http://www.bankruptcylawfirmdetroit.com/images/logo.png",
+  "description": "Detroit Bankruptcy Law Team has been providing expert legal assistance to over 8000 people through the bankruptcy process and on to regain control over their finances. Call us at 586-574-0916.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "31201 Chicago Rd",
+    "addressLocality": "Warren",
+    "addressRegion": "Michigan",
+    "postalCode": "48093",
+    "addressCountry": "United States"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "42.5225783",
+    "longitude": "-83.024849"
+  },
+  "hasMap": "https://www.google.com/maps/place/Kostopoulos+%26+Associates/@42.5225783,-83.024849,17z/data=!3m1!4b1!4m5!3m4!1s0x8824da45a9f7c88f:0xc5bb080fd0689ca0!8m2!3d42.5225783!4d-83.0226603?hl",
+  "openingHours": "Mo, Tu, We, Th, Fr 09:00-17:00 ",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1 (586) 574-0916",
+    "contactType": "sales"
+  },
+  "telephone": "+1 (586) 574-0916"
+}
